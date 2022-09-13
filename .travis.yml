@@ -16,8 +16,8 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t simple-node-js .
-  - docker tag simple-node-js YOUR_DOCKER_HUB/simple-node-js:latest
+  - docker tag simple-node-js "$YOUR_DOCKER_HUB"/simple-node-js:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push YOUR_DOCKER_HUB/simple-node-js
+  - docker push "$YOUR_DOCKER_HUB"/simple-node-js
