@@ -16,7 +16,7 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t simple-node-js .
-  - docker tag simple-node jolinlie/simple-node-js:latest
+  - docker tag simple-node-js jolinlie/simple-node-js:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
